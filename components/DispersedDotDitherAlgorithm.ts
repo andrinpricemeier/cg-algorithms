@@ -1,4 +1,4 @@
-import { Matrix } from ".";
+import { Matrix } from "./Matrix";
 
 const quantize = (colors: number, ditherValues: number, inputPixel: number) => {
     return Math.floor(inputPixel / colors * ditherValues);

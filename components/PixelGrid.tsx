@@ -1,10 +1,11 @@
 import { Grid, TextField } from "@mui/material";
 import { useCallback, useMemo } from "react";
-import { Matrix } from ".";
+import { Matrix } from "./Matrix";
 
 interface IPixelGridProps {
     values: Matrix
     onValueChange?: (index: [number, number], value: number) => void
+    readOnly?: boolean
 }
 
 const PixelGrid = (props: IPixelGridProps) => {
@@ -33,7 +34,7 @@ const PixelGrid = (props: IPixelGridProps) => {
                         {row.map((value, colIndex) => {
                             return (
                                 <Grid key={`${rowIndex}.${colIndex}`} item>
-                                    <TextField sx={{ width: 100 }} key={`text.${rowIndex}.${colIndex}`} id="outlined-basic" name={`${rowIndex}.${colIndex}`} label={`${rowIndex}.${colIndex}`} value={value} variant="outlined" type="number" onChange={notifyValueChange} />
+                                    <TextField InputProps={{ readOnly: props.readOnly !== undefined && props.readOnly ? true : false }} sx={{ width: 100 }} key={`text.${rowIndex}.${colIndex}`} id="outlined-basic" name={`${rowIndex}.${colIndex}`} label={`${rowIndex}.${colIndex}`} value={value} variant="outlined" type="number" onChange={notifyValueChange} />
                                 </Grid>
                             )
                         })}
