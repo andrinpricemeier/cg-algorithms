@@ -107,7 +107,7 @@ const DispersedDotDitheringPage: NextPage = () => {
                     key="desc"
                 />
             </Head>
-            <h1>Dispersed Dot Dithering (Halftone)</h1>
+            <h1>Dispersed Dot Dithering</h1>
             <p>Dispersed dot dithering is a technique for reproducing an image where only a tiny fraction of colors are available using the same resolution. It works by first quantizing the original colors and then applying a so called dither matrix.</p>
             <h2>Simulation</h2>
             <TextField id="outlined-basic" label="Colors" onChange={updateColors} value={colors} variant="outlined" type="number" sx={{ marginRight: 2, width: 150 }} />

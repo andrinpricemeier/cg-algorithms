@@ -2,15 +2,13 @@ import { TextField } from '@mui/material'
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import { useCallback, useEffect, useMemo, useState } from 'react'
+import deepClone from '../../../components/DeepClone'
 import dither from '../../../components/ErrorDiffusionDitherAlgorithm'
 import { Matrix } from '../../../components/Matrix'
 import PixelGrid from '../../../components/PixelGrid'
 
-const deepClone = (obj: any) => {
-    return JSON.parse(JSON.stringify(obj));
-}
 
-const DispersedDotDitheringPage: NextPage = () => {
+const ErrorDiffusionPage: NextPage = () => {
     const [colors, setColors] = useState<number>(256);
     const [errorMatrix, setErrorMatrix] = useState<Matrix>([[-1, 0, 7/16], [1/16, 5/16, 3/16]]);
     const [inputPixelGridSize, setInputPixelGridSize] = useState<[number, number]>([1, 3]);
@@ -68,7 +66,7 @@ const DispersedDotDitheringPage: NextPage = () => {
                     key="desc"
                 />
             </Head>
-            <h1>Error diffusion (Halftone)</h1>
+            <h1>Error diffusion</h1>
             <p>Error diffusion works by calculating the error for each pixel and distributing said pixel on its neighbours.</p>
             <h2>Simulation</h2>
             <TextField id="outlined-basic" label="Colors" onChange={updateColors} value={colors} variant="outlined" type="number" sx={{ marginRight: 2, width: 150 }} />
@@ -85,4 +83,4 @@ const DispersedDotDitheringPage: NextPage = () => {
     )
 }
 
-export default DispersedDotDitheringPage
+export default ErrorDiffusionPage
