@@ -9,8 +9,8 @@ const Layout = (props: any) => {
     return (
         <div className='layout'>
             <NavBar />
-            <Grid container spacing={2} sx={{ margin: 2 }}>
-                <Grid item sm={2}>
+            <Grid container spacing={2} sx={{ marginBottom: 2, marginTop: 2}}>
+                <Grid item sm={3}>
                     <aside>
                         <Sidebar />
                     </aside>
