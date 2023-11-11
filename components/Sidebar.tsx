@@ -17,7 +17,6 @@ const Sidebar = () => {
         lookup["5"] = "/scanline-conversion/bresenham";
         lookup["6"] = "/scanline-conversion/floodfill";
         lookup["8"] = "/clipping/cohen-sutherland";
-        lookup["10"] = "/lighting/ambient";
         lookup["11"] = "/lighting/diffuse";
         lookup["12"] = "/lighting/specular";
         return lookup;
@@ -57,7 +56,6 @@ const Sidebar = () => {
                     <TreeItem nodeId="8" label="Cohen Sutherland" />
                 </TreeItem>
                 <TreeItem nodeId="9" label="Lighting">
-                    <TreeItem nodeId="10" label="Ambient" />
                     <TreeItem nodeId="11" label="Diffuse" />
                     <TreeItem nodeId="12" label="Specular" />
                 </TreeItem>
